@@ -1,18 +1,16 @@
 new Vue({
     el: '#app',
     data: {
-        attachRed: false,
-        attachBlue: false,
-        attachGreen: false,
-        color: 'black'
+        show: true,
+        cars: ['Mercedes','BMW','Toyota'],
+        details: [
+            {name:'Mercedes', color:'black', year:2017},
+            {name:'BMW', color:'white', year:2018},
+            {name:'Toyota', color:'black', year:2016}
+        ]
     },
-    computed: {
-        redBlueClass: function(){
-            return{
-                red: this.attachRed,
-                blue: !this.attachRed
-            }
-        }
+    changeColor: function(){
+        
     }
 });
 

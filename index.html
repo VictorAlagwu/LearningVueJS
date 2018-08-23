@@ -12,19 +12,24 @@
 <body>
     <div id="app">
         <div>
-            <h3 class="name" :style={backgroundColor:color}>Victor Alagwu</h3>
+            <h3 class="name" v-if="show">
+                <ul>
+                    <li v-for="(car, i) in cars" :key="car">{{ car }} ({{i}})</li>
+                </ul>
+                <button @click="cars.push('Jargon')">Add New Car</button>
+            </h3>
+            <h3 v-else="show">Hello</h3>
+            <h3 v-show="show">Hide Content</h3>
         </div>
-        <div class="demo" @click="attachRed = !attachRed" :class="{red: attachRed}">
-            <p>Hello This is the red block</p>
-        </div>
-        <div class="demo" :class="redBlueClass">
-            <p>Hello This is the red block</p>
-        </div>
-        
-        <div class="demo" :class="[color,{red: attachRed}]">
-            <p>Your color would be displace here.</p>
-        </div>
-        <input type="text" v-model="color">
+        <button @click="show = !show">Show Name</button>
+       <template v-for="(detail, i) in details">
+           <ul>
+               <li v-for="(value, key) in detail">
+                   <p v-if="key === 'BMW'"> Wow </p>
+                   {{ key }}: {{ value }}
+                </li>
+           </ul>
+       </template>
     </div>
 </body>       
  <script src="index.js"></script>
