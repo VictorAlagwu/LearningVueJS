@@ -1,0 +1,19 @@
+body{
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    display:inline-block;
+    margin: 10px;
+}
+
+.green {
+    background-color: chartreuse;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: crimson;
+}
