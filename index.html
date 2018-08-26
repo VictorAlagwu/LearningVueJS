@@ -6,31 +6,26 @@
     <title>Victor Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="vue.js"></script> 
+    <script src="assets/vue.js"></script> 
 
 </head>
 <body>
-    <div id="app">
-        <div>
-            <h3 class="name" v-if="show">
-                <ul>
-                    <li v-for="(car, i) in cars" :key="car">{{ car }} ({{i}})</li>
-                </ul>
-                <button @click="cars.push('Jargon')">Add New Car</button>
-            </h3>
-            <h3 v-else="show">Hello</h3>
-            <h3 v-show="show">Hide Content</h3>
-        </div>
-        <button @click="show = !show">Show Name</button>
-       <template v-for="(detail, i) in details">
-           <ul>
-               <li v-for="(value, key) in detail">
-                   <p v-if="key === 'BMW'"> Wow </p>
-                   {{ key }}: {{ value }}
-                </li>
-           </ul>
-       </template>
+    <div id="app1">
+            <h1 ref="heading">{{ title }}</h1>
+            <name></name>
+            <button @click="show">Show Paragraph</button>
+            <p v-if="showParagraph">This is not always visible</p>
     </div>
+    <div id="app2">
+            <h1>{{ title }}</h1>
+            <name></name>
+            <name></name>
+            <button @click="onChange">Show Paragraph</button>
+    </div>
+    <div id="app3">
+
+    </div>
+              
 </body>       
  <script src="index.js"></script>
 </html>
