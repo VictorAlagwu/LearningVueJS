@@ -4,7 +4,7 @@ var data = {
 };
 
 Vue.component('name', {
-    template: '<marquee>Victor</mar quee>'
+    template: '<marquee>Victor</marquee>'
 })
 var vm1 = new Vue({
     el: '#app1',
@@ -52,7 +52,38 @@ var vm2 = new Vue({
 });
 
 var vm3 = new Vue({
-    template: '<h2>Victor</h2>'
-});
+    el: "#app3",
+    data: {
+        title: "Checking DOM migrations"
+    },
+    beforeCreate() {
+        console.log('beforeCreate()');
+    },
+    created() {
+        console.log('created()');
+    },
+    beforeMount() {
+        console.log('befoeMount()');
+    },
+    mounted() {
+        console.log('mounted()');
+    },
+    beforeUpdate() {
+        console.log('beforeUpdate()');
+    },
+    updated() {
+        console.log('updated()');
+    },
+    beforeDestroy() {
+        console.log('beforeDestroy()');    
+    },
+    destroyed() {
+        console.log('destroyed()');
+    },
+    methods: {
+        destroy(){
+            this.$destroy();
+        }
+    }
 
-vm3.$mount('#app3');
+})
