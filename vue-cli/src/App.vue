@@ -1,22 +1,8 @@
 <template>
-  <div id="app">
-    <h2>Hello {{ user }}</h2>
-    <p>{{ msg }}</p>
-  </div>
+  <status-update></status-update>
 </template>
-
 <script>
-export default {
-  name: 'app',
-  data (){
-    return {
-      msg: 'Welcome to Your Vue.js App',
-      user: 'Victor Alagwu'
-    }
-  }
-}
 </script>
-
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
