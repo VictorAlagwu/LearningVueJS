@@ -20,7 +20,8 @@
                 return this.name.split("").reverse().join("");
             },
             resetName(){
-                return this.name = "Victor";
+                this.name = "Legal";
+                this.$emit('nameWasReset', this.name);
             }
         }
     }
