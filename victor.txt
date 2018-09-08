@@ -1,0 +1,10 @@
+npm WARN saveError ENOENT: no such file or directory, open '/Users/victor/Sites/vuejs/package.json'
+npm WARN enoent ENOENT: no such file or directory, open '/Users/victor/Sites/vuejs/package.json'
+npm WARN vuejs No description
+npm WARN vuejs No repository field.
+npm WARN vuejs No README data
+npm WARN vuejs No license field.
+
+audited 12785 packages in 3.925s
+found 0 vulnerabilities
+
