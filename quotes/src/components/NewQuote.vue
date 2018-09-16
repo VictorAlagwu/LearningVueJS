@@ -5,11 +5,12 @@
                 <label for="quote">Quote</label>
                 <textarea class="form-control" rows="3" v-model="quote"></textarea>
             </div>
-            <br>
-            <div class="col-sm-8 col-sm-offset-2 col-xs-12 col-md-6 col-md-offset-3">
+            <div class="col-sm-8 col-sm-offset-2 col-xs-12 col-md-6 col-md-offset-3" style="padding: 10px;">
                 <button type="submit" @click.prevent="addQuote" class="btn btn-primary">Add Quote</button>
             </div>
+           
         </form>
+        <hr>
         
     </div>
 </template>
@@ -18,7 +19,7 @@ export default {
     data: function() {
         return {
             quote: ''
-        }
+        } 
     },
     methods: {
         addQuote: function(){
