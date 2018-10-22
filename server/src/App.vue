@@ -13,6 +13,12 @@
                 </div>
                 <button class="btn btn-primary" @click="submit">Submit</button>
                 <button class="btn btn-info" @click="fetchInfo">Fetch Data</button>
+                <hr>
+                <ul class="list-group">
+                    <li class="list-group-item" v-for="user in users">
+                        {{ user.username }} | {{ user.email}}
+                    </li>
+                </ul>
             </div>
             
         </div>
@@ -26,18 +32,34 @@
                 user: {
                     username: '',
                     email: ''
-                }
+                },
+                users: []
             }
         },
         methods: {
             submit() {
-                this.$http.post('https://vuejs-demo-d6820.firebaseio.com/data.json', this.user)
+                this.$http.post('', this.user)
                     .then (response => {
                         console.log(response);
                     }, error => {
                         console.log (error);
                     });
                 ;
+            },
+            fetchInfo() {
+                this.$http.get('')
+                        .then (response => {
+                            return response.json();
+                        }, error => {
+                            console.log(error);
+                        })
+                        .then (data => {
+                            const resultArray = [];
+                            for (const key in data) {
+                                resultArray.push(data[key]);
+                            }
+                            this.users = resultArray;
+                        });
             }
         }
     }
