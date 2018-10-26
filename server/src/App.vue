@@ -47,32 +47,19 @@
                 this.resource.saveAlt(this.user);
             },
             fetchInfo() {
-                // this.$http.get('data.json')
-                //         .then (response => {
-                //             return response.json();
-                //         }, error => {
-                //             console.log(error);
-                //         })
-                //         .then (data => {
-                //             const resultArray = [];
-                //             for (const key in data) {
-                //                 resultArray.push(data[key]);
-                //             }
-                //             this.users = resultArray;
-                //         });
                 this.resource.getData({node: this.node})
                     .then (response => {
-                                return response.json();
-                            }, error => {
-                                console.log(error);
-                            })
-                            .then (data => {
-                                const resultArray = [];
-                                for (const key in data) {
-                                    resultArray.push(data[key]);
-                                }
-                                this.users = resultArray;
-                            });
+                         return response.json();
+                    }, error => {
+                        console.log(error);
+                    })
+                    .then (data => {
+                        const resultArray = [];
+                        for (const key in data) {
+                            resultArray.push(data[key]);
+                        }
+                        this.users = resultArray;
+                    });
             }
         },
         created() {
